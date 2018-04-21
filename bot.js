@@ -90,7 +90,7 @@ if (message.content.startsWith(prefix + 'helنمp')) {
 
 }
 });
-client.login("NDE5ODU3OTUzNjUxNDI1Mjkw.DaFE8w.eb39jHJnb0AX8M4qX1onAwvuBFM");
+client.login(process.env.BOT_TOKEN);
 
 // تعديلات بوت سرعة الكتابة الأصدار الثاني //
 // 1- تم حل مشكلة إحتساب النقاط للشخص الذي قام بكتابة الأمر
