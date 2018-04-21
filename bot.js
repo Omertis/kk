@@ -79,7 +79,7 @@ var Canvas = require('canvas')
 var jimp = require('jimp')
 client.on('guildMemberAdd', member => {
       
-        if (member.guild.id === "419854921895247893") {
+        if (member.guild.id === "419854921ds95247893") {
         var w = ['./img/Jedlly.png'];
            let Image = Canvas.Image,
                canvas = new Canvas(401, 202),
@@ -116,8 +116,8 @@ client.on('guildMemberAdd', member => {
                                  ctx.drawImage(ava, 10, 38, 128, 126);                    
       //ur name
                         
-   client.channels.get("419936453343313922").sendFile(canvas.toBuffer())
-  client.channels.get("419936453343313922").send(`**Welcome ${member} To __${member.guild.name}__You are User number_  ${member.guild.memberCount}_** `)
+   client.channels.get("419936453s43313922").sendFile(canvas.toBuffer())
+  client.channels.get("419936453sd43313922").send(`**Welcome ${member} To __${member.guild.name}__You are User number_  ${member.guild.memberCount}_** `)
 
    })})  }
    });
@@ -224,47 +224,7 @@ client.on('message', message => {
 
 
 
-var dat = JSON.parse("{}");
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
-}
-client.on("ready", () => {
-    var guild;
-    while (!guild)
-        guild = client.guilds.find("name", "Jelly Bot")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        })
-    })
-})
-client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find('name', 'jelly-chat');
-    if (!channel) {
-        console.log("!channel fails");
-        return;
-    }
-    if (member.id == client.user.id) {
-        return;
-    }
-    console.log('made it till here!');
-    var guild;
-    while (!guild)
-        guild = client.guilds.find("name", "Jelly Bot")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            if (dat[Inv])
-                if (dat[Inv] < Invite.uses) {
-                    console.log(3);
-                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
- channel.send(` **Invited by**  ${Invite.inviter} `)            
- }
-            dat[Inv] = Invite.uses;
-        })
-    })
-});
+
 
 
 
@@ -457,7 +417,7 @@ const w = ['./img/qqqq.jpg'];
                                  ctx.closePath();
                                  ctx.clip();
                                  ctx.drawImage(ava, 10, 38, 128, 126);     
-client.channels.get("425716225663041537").sendFile(canvas.toBuffer())
+client.channels.get("419936453343313922").sendFile(canvas.toBuffer())
 
 
 
@@ -466,6 +426,49 @@ client.channels.get("425716225663041537").sendFile(canvas.toBuffer())
 
 }
 });
+
+var dat = JSON.parse("{}");
+function forEachObject(obj, func) {
+    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
+}
+client.on("ready", () => {
+    var guild;
+    while (!guild)
+        guild = client.guilds.find("name", "Jelly Bot")
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            dat[Inv] = Invite.uses;
+        })
+    })
+})
+client.on("guildMemberAdd", (member) => {
+    let channel = member.guild.channels.find('name', 'jelly-chat');
+    if (!channel) {
+        console.log("!channel fails");
+        return;
+    }
+    if (member.id == client.user.id) {
+        return;
+    }
+    console.log('made it till here!');
+    var guild;
+    while (!guild)
+        guild = client.guilds.find("name", "Jelly Bot")
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            if (dat[Inv])
+                if (dat[Inv] < Invite.uses) {
+                    console.log(3);
+                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
+ channel.send(` **Invited by**  ${Invite.inviter} `)            
+ }
+            dat[Inv] = Invite.uses;
+        })
+    })
+});
+
 
 client.login(process.env.BOT_TOKEN);
 
