@@ -1,118 +1,470 @@
-// شكراً لشراءك كود سرعة الكتابة //
+const Discord = require('discord.js');
+const client = new Discord.Client({ fetchAllMembers: true });
 
-// شروط الشراء:
-// 1- لديك الأحقية في تعديل الكود
-// 2- ليس لديك الحق بإعادة بيع الكود
-// 3- ليس لديك الحق بأن تقول إنك قمت بكتابة الكود كاملاً
-// الرجاء من قام بشراء الكود بأن يطبق الشروط
 
-// السيرفر الرسمي الخاص بالفريق:
-// https://discord.gg/VxatyBC //
 
-// CopyRight: NoName Team.
 
-// يمكنك رؤية التعديلات في هذا الأصدار نهاية السطر //
 
-const Discord = require("discord.js");
-const fs = require("fs")
-const client = new Discord.Client();
-client.on('ready', () => {
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`in ${client.guilds.size} servers `)
-    console.log(`[Users] ${client.users.size}`)
-	
+client.on("guildMemberAdd",
+
+member => {
+
+    var moment = require("moment");
+
+ 
+
+                    let modlog2 = client.channels.find('name', 'jelly-chat');
+
+
+ 
+
+         moment.locale('ar-ly');
+
+         var h = member.user;
+
+        let heroo = new Discord.RichEmbed()
+
+        .setColor('#6fc167')
+
+        .setThumbnail(h.avatarURL)
+
+        .setAuthor(h.username,h.avatarURL)
+
+        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+
+         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+
+     modlog2.send({embed:heroo});
+
+ 
+
+
+
+
+
+
+
+
+
+
+
 });
-let points = JSON.parse(fs.readFileSync('./typePTS.json', 'utf8')); // يقوم بقراءه ملف النقاط , والمسار حق النقاط
-const prefix = "#"; // البرفكس العام لجميع الأوامر
+    
+    
+    
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+var fs = require('fs');
+var Canvas = require('canvas')
+var jimp = require('jimp')
+    var fs = require('fs');
+var Canvas = require('canvas')
+var jimp = require('jimp')
+client.on('guildMemberAdd', member => {
+      
+        if (member.guild.id === "419854921895247893") {
+        var w = ['./img/Jedlly.png'];
+           let Image = Canvas.Image,
+               canvas = new Canvas(401, 202),
+               ctx = canvas.getContext('2d');
+           ctx.patternQuality = 'bilinear';
+           ctx.filter = 'bilinear';
+           ctx.antialias = 'subpixel';
+           ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+           ctx.shadowOffsetY = 2;
+           ctx.shadowBlur = 2;
+           fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+               if (err) return console.log(err);
+               let BG = Canvas.Image;
+               let ground = new Image;
+               ground.src = Background;
+               ctx.drawImage(ground, 0, 0, 401, 202);
+   
+   })
+   
+                   let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                   jimp.read(url, (err, ava) => {
+                       if (err) return console.log(err);
+                       ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                           if (err) return console.log(err);
+
+//AVATAR�
+                              let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(75.5, 101, 63, 0, Math.PI*2);
+                                 ctx.closePath();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 10, 38, 128, 126);                    
+      //ur name
+                        
+   client.channels.get("419936453343313922").sendFile(canvas.toBuffer())
+  client.channels.get("419936453343313922").send(`**Welcome ${member} To __${member.guild.name}__You are User number_  ${member.guild.memberCount}_** `)
+
+   })})  }
+   });
+
+
+
+
+
+  
+  client.on('ready', () => {
+  console.log(`Logged in as ${client.user.tag} !`);
+        client.user.setActivity("WELCOME my DEV Markﾠ#5181",{type: 'WATCHING'});
+
+});
+  
+       client.on('message', message => {
+        var args = message.content.split(/[ ]+/)
+        if(message.content.includes('gmail')){
+           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
+        }
+    });
+    
+    client.on('message', message => {
+        var args = message.content.split(/[ ]+/)
+        if(message.content.includes('snapchat')){
+           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
+        }
+    });
+    
+    
+    client.on('message', message => {
+        var args = message.content.split(/[ ]+/)
+        if(message.content.includes('instagram')){
+            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
+        }
+    });
+    
+    
+    client.on('message', message => {
+        var args = message.content.split(/[ ]+/)
+        if(message.content.includes('twitter')){
+           if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
+        }
+    });
+    
+    
+    client.on('message', message => {
+        var args = message.content.split(/[ ]+/)
+        if(message.content.includes('facebook')){
+            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
+        }
+    });
+    
+    
+    
+    client.on('message', message => {
+        var args = message.content.split(/[ ]+/)
+        if(message.content.includes('youtube')){
+          if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
+        }
+    
+    });
 client.on('message', message => {
-if (!points[message.author.id]) points[message.author.id] = { // يقوم الكود تلقائياً في حال لم يجد نقاط العضو بإنشاء نقاط له ويتم إرسالها الملف المخصص
-	points: 0,
-  };
-if (message.content.startsWith(prefix + 'سرعة')) { // $سرعة
-	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
-
-const type = require('./type.json'); // في هذا السطر يقوم الكود بقراءة ملف الأسئلة
-const item = type[Math.floor(Math.random() * type.length)]; // الأرراي المخصص للأسئلة
-const filter = response => { // في هذا السطر يقوم بصنع فلتر للأجوبة
-    return item.answers.some(answer => answer.toLowerCase() === response.content.toLowerCase());
-};
-message.channel.send('**لديك 15 ثانية لكتابة الكلمة**').then(msg => {
-	let embed = new Discord.RichEmbed()
-	.setColor('#000000')
-	.setFooter("سرعة كتابة | لرؤية مجموع نقاطك اكتب #نقاطي |")
-	.setDescription(`**قم بكتابة : ${item.type}**`) // ${item.type} = السؤال
-	
-	msg.channel.sendEmbed(embed).then(() => {
-        message.channel.awaitMessages(filter, { maxMatches: 1, time: 15000, errors: ['time'] })
-        .then((collected) => {
-		message.channel.send(`${collected.first().author} ✅ **لقد قمت بكتابة الكلمة بالوقت المناسب**`);
-		console.log(`[Typing] ${collected.first().author} typed the word.`);
-            let won = collected.first().author; // في هذا السطر يقوم الكود بسحب الأي دي الذي قام بالأجابة اولاً
-            points[won.id].points++;
-          })
-          .catch(collected => { // في حال لم يقم أحد بالإجابة
-            message.channel.send(`:x: **لم يقم أحد بكتابة الجملة بالوقت المناسب**`);
-			console.log(`[Typing] Error: No one type the word.`);
-          })
-		})
-	})
+    if(message.content.includes('discord.gg')){
+                                            if(!message.channel.guild) return message.reply('** advertising me on DM ? :thinking:   **');
+        if (!message.member.hasPermissions('ADMINISTRATOR')){
+        message.delete()
+    return message.reply(`** Not allowed to advertising Here :angry: ! **`)
+    }
 }
 });
+
+
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'نقاطي')) {
-	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
-	let userData = points[message.author.id];
-	let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
-	.setFooter("بوت سرعة الكتابة")
-	.setDescription(`نقاطك: \`${userData.points}\``)
-	message.channel.sendEmbed(embed)
-  }
-  fs.writeFile("./typePTS.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  })
+   if (message.content === "@roll") {
+  message.channel.sendMessage(Math.floor(Math.random() * 100));
+    }
 });
-client.on('guildCreate', guild => {
-	console.log(`Added to a server by: ${guild.owner.user.username} || Server name: ${guild.name} || Users: ${guild.memberCount}`); // ايفنت يقوم بإرسال إلى الكونسل بأنه قد قامت احد السيرفر بدعوة البوت
+
+
+
+
+var dat = JSON.parse("{}");
+function forEachObject(obj, func) {
+    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
+}
+client.on("ready", () => {
+    var guild;
+    while (!guild)
+        guild = client.guilds.find("name", "Jelly Bot")
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            dat[Inv] = Invite.uses;
+        })
+    })
+})
+client.on("guildMemberAdd", (member) => {
+    let channel = member.guild.channels.find('name', 'jelly-chat');
+    if (!channel) {
+        console.log("!channel fails");
+        return;
+    }
+    if (member.id == client.user.id) {
+        return;
+    }
+    console.log('made it till here!');
+    var guild;
+    while (!guild)
+        guild = client.guilds.find("name", "Jelly Bot")
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            if (dat[Inv])
+                if (dat[Inv] < Invite.uses) {
+                    console.log(3);
+                    console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
+ channel.send(` **Invited by**  ${Invite.inviter} `)            
+ }
+            dat[Inv] = Invite.uses;
+        })
+    })
 });
+
+
+
+
+
+
+client.on('message',function(message) {
+                  if(!message.channel.guild) return;
+
+  const prefix = "#";
+                    if (message.content === prefix + "discrim") {
+    let messageArray = message.content.split(" ");
+    let args = messageArray.slice(1);
+    
+    if (message.author.bot) return;
+    
+    var discri = args[0]
+    let discrim
+    if(discri){
+    discrim = discri;
+    }else{
+    discrim = message.author.discriminator;
+    }
+    if(discrim.length == 1){
+        discrim = "000"+discrim
+    }
+    if(discrim.length == 2){
+        discrim = "00"+discrim
+    }
+    if(discrim.length == 3){
+        discrim = "0"+discrim
+    }
+
+        const users = client.users.filter(user => user.discriminator === discrim).map(user => user.username);
+        return message.channel.send(`
+            **Found ${users.length} users with the discriminator #${discrim}**
+            ${users.join('\n')}
+        `);
+
+/*if(command == "emoji-img"){
+        let emojis = msg.guild.emojis
+  msg.channel.send({ files: [emoji.url] });
+}*/
+}
+});
+
+
+
 client.on('message', message => {
-if (message.content.startsWith(prefix + 'helنمp')) {
-	if(!message.channel.guild) return message.reply('**هذا الأمر للسيرفرات فقط**').then(m => m.delete(3000));
-	let embed = new Discord.RichEmbed()
-    .setAuthor(`${message.author.tag}`, message.author.avatarURL)
-	.setColor('#000000')
-	.addField("#سرعة","**لبدأ لعبة سرعة الكتابة**")
-	.addField("#نقاطي","**لعرض النقاط الخاصة بك*")
-	.setFooter("بوت سرعة الكتابة")
-	message.channel.sendEmbed(embed).then(m => m.delete(10000));
+    if (message.content.startsWith("دعواتي")) {
+    message.guild.fetchInvites()
+    .then(invites => message.channel.send(`لقد دعوت  **${invites.find(invite => invite.inviter.id === message.author.id).uses}** عضو لهاذا السيرفر`))
+     
+    }
+});
+
+
+
+
+    client.on('guildMemberAdd', member => {
+
+     if (member.guild.id === "419854921d895247893") {
+    
+if (member.user.bot) return;
+var Canvas = require('canvas')
+var jimp = require('jimp')
+        let Image = Canvas.Image,
+            canvas = new Canvas(749, 198),
+            ctx = canvas.getContext('2d');
+        ctx.patternQuality = 'bilinear';
+        ctx.filter = 'bilinear';
+        ctx.antialias = 'subpixel';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';    
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.stroke();
+        ctx.beginPath();
+                
+        fs.readFile('./img/qqqq.jpg', function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 749, 198);
+
+})
+
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);                        
+                                   //wl
+                        ctx.font = '35px Aeland';
+                        ctx.fontSize = '40px';
+                        ctx.fillStyle = "#FFFFFF";
+                        ctx.textAlign = "center";
+                        ctx.fillText(" Welcome to our server", 440, 40);
+                        
+                        //ur name
+                        ctx.font = '40px Impact';
+                        ctx.fontSize = '48px';
+                        ctx.fillStyle = "#000000";
+                        ctx.textAlign = "center";
+                        ctx.fillText(member.user.username, 200, 25);
+                        
+                       //AVATAR�
+                              let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(75, 101, 63, 0, Math.PI*2);
+                                 ctx.closePath();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 10, 38, 128, 126);                    
+                        
+client.channels.get("4257162256d63041537").sendFile(canvas.toBuffer())
+
+
+
+})
+})
 
 }
 });
-client.login(process.env.BOT_TOKEN);
-
-// تعديلات بوت سرعة الكتابة الأصدار الثاني //
-// 1- تم حل مشكلة إحتساب النقاط للشخص الذي قام بكتابة الأمر
-// 2- تم جعل الكلمات على شكل إمبد لإعطاءه شكل جميل
-// 3- والعديد من التعديلات //
+    
 
 
-// الإضافات المستقبليه //
-// 1- سوف يتم تحويل الكلمات من إمبد إلى كانفس
-// 2- سوف يتم تحويل النقاط من نقاط عامة إلى نقاط خاصه لكل سيرفر
-// 3- سوف يتم إضافة 1000 كلمة
+
+ client.on('guildMemberAdd', member => {
+
+     if (member.guild.id === "419854921895247893") {
+    
+if (member.user.bot) return;
+var Canvas = require('canvas')
+var jimp = require('jimp')
+const w = ['./img/qqqq.jpg'];
+        let Image = Canvas.Image,
+            canvas = new Canvas(749, 198),
+            ctx = canvas.getContext('2d');
+        ctx.patternQuality = 'bilinear';
+        ctx.filter = 'bilinear';
+        ctx.antialias = 'subpixel';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.4)';
+        ctx.shadowOffsetY = 2;
+        ctx.shadowBlur = 2;
+        ctx.stroke();
+        ctx.beginPath();
+
+        fs.readFile(`${w[Math.floor(Math.random() * w.length)]}`, function (err, Background) {
+            if (err) return console.log(err);
+            let BG = Canvas.Image;
+            let ground = new Image;
+            ground.src = Background;
+            ctx.drawImage(ground, 0, 0, 749, 198);
+
+})
+
+                let url = member.user.displayAvatarURL.endsWith(".webp") ? member.user.displayAvatarURL.slice(5, -20) + ".png" : member.user.displayAvatarURL;
+                jimp.read(url, (err, ava) => {
+                    if (err) return console.log(err);
+                    ava.getBuffer(jimp.MIME_PNG, (err, buf) => {
+                        if (err) return console.log(err);
+                        ctx.font = '35px agent_orange';
+                        ctx.fontSize = '40px';
+                        ctx.fillStyle = "#7FF5DA";
+                        ctx.textAlign = "center";
+                        ctx.fillText(" Welcome to " + member.guild.name , 300, 55);
+
+                        //ur name
+                        ctx.font = '40px Impact';
+                        ctx.fontSize = '48px';
+                        ctx.fillStyle = "#7FF586";
+                        ctx.textAlign = "center";
+                        ctx.fillText(member.user.username, 300, 110);
+
+                         ctx.font = '30px Impact';
+                        ctx.fontSize = '20px';
+                        ctx.fillStyle = "#7FCDF5";
+                        ctx.textAlign = "center";
+                        ctx.fillText("Member Number" + member.guild.memberCount, 300, 150);
 
 
-// 4- سوف يتم إضافة العديد من الأوامر منها //
-// $تصفية //
-// وهذا الأمر سوف يقوم بتصفية النقاط الخاصة بك في سيرفر معين //
+                        //Avatar
+                    let Avatar = Canvas.Image;
+                              let ava = new Avatar;
+                              ava.src = buf;
+                              ctx.beginPath();
+                              ctx.arc(75, 101, 63, 0, Math.PI*2);
+                                 ctx.closePath();
+                                 ctx.clip();
+                                 ctx.drawImage(ava, 10, 38, 128, 126);     
+client.channels.get("425716225663041537").sendFile(canvas.toBuffer())
 
-// $pts //
-// سوف يقوم بإرسال النقاط الخاصة بك على شكل صورة //
 
-// السيرفر الرسمي الخاص بالفريق:
-// https://discord.gg/VxatyBC //
 
-// موفقين جميعاً
-// CopyRight: NoName Team.
+})
+})
+
+}
+});
+
+
