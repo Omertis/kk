@@ -467,4 +467,5 @@ client.channels.get("425716225663041537").sendFile(canvas.toBuffer())
 }
 });
 
+client.login(process.env.BOT_TOKEN);
 
