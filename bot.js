@@ -361,7 +361,7 @@ client.channels.get("4257162256d63041537").sendFile(canvas.toBuffer())
 if (member.user.bot) return;
 var Canvas = require('canvas')
 var jimp = require('jimp')
-const w = ['./img/qqqq.jpg'];
+const w = ['./img/jelly.png'];
         let Image = Canvas.Image,
             canvas = new Canvas(749, 198),
             ctx = canvas.getContext('2d');
