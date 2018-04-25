@@ -13,7 +13,7 @@ member => {
 
  
 
-                    let modlog2 = client.channels.find('name', 'jelly-chat');
+                    let modlog2 = client.channels.find('name', 'general');
 
 
  
@@ -52,50 +52,7 @@ member => {
     
     
     
-client.on("guildMemberAdd",
 
-member => {
-
-    var moment = require("moment");
-
- 
-
-                    let modlog2 = client.channels.find('name', 'puplic');
-
-
- 
-
-         moment.locale('ar-ly');
-
-         var h = member.user;
-
-        let heroo = new Discord.RichEmbed()
-
-        .setColor('#6fc167')
-
-        .setThumbnail(h.avatarURL)
-
-        .setAuthor(h.username,h.avatarURL)
-
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-
-         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
-
-     modlog2.send({embed:heroo});
-
- 
-
-
-
-
-
-
-
-
-
-
-
-});
 
 
 
@@ -399,7 +356,7 @@ client.channels.get("4257162256d63041537").sendFile(canvas.toBuffer())
 
  client.on('guildMemberAdd', member => {
 
-     if (member.guild.id === "419854921895247893") {
+     if (member.guild.id === "438797856690798602") {
     
 if (member.user.bot) return;
 var Canvas = require('canvas')
@@ -460,7 +417,7 @@ const w = ['./img/jelly.png'];
                                  ctx.closePath();
                                  ctx.clip();
                                  ctx.drawImage(ava, 10, 38, 128, 126);     
-client.channels.get("419936453343313922").sendFile(canvas.toBuffer())
+client.channels.get("438797856690798604").sendFile(canvas.toBuffer())
 
 
 
@@ -481,7 +438,7 @@ function forEachObject(obj, func) {
 client.on("ready", () => {
     var guild;
     while (!guild)
-        guild = client.guilds.find("name", "Jelly Bot")
+        guild = client.guilds.find("name", "test")
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -490,7 +447,7 @@ client.on("ready", () => {
     })
 })
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find('name', 'jelly-chat');
+    let channel = member.guild.channels.find('name', 'general');
     if (!channel) {
         console.log("!channel fails");
         return;
@@ -501,7 +458,7 @@ client.on("guildMemberAdd", (member) => {
     console.log('made it till here!');
     var guild;
     while (!guild)
-        guild = client.guilds.find("name", "Jelly Bot")
+        guild = client.guilds.find("name", "test")
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -516,21 +473,7 @@ client.on("guildMemberAdd", (member) => {
     })
 });
 
-var dat = JSON.parse("{}");
-function forEachObject(obj, func) {
-    Object.keys(obj).forEach(function (key) { func(key, obj[key]) })
-}
-client.on("ready", () => {
-    var guild;
-    while (!guild)
-        guild = client.guilds.find("name", "TJ")
-    guild.fetchInvites().then((data) => {
-        data.forEach((Invite, key, map) => {
-            var Inv = Invite.code;
-            dat[Inv] = Invite.uses;
-        })
-    })
-})
+
 
 
 
