@@ -3,8 +3,6 @@ const client = new Discord.Client({ fetchAllMembers: true });
 
 
 
-
-
 client.on("guildMemberAdd",
 
 member => {
@@ -13,7 +11,7 @@ member => {
 
  
 
-                    let modlog2 = client.channels.find('name', 'chat');
+                    let modlog2 = client.channels.find('name', 'cshat');
 
 
  
@@ -30,9 +28,9 @@ member => {
 
         .setAuthor(h.username,h.avatarURL)
 
-        .addField(': You joinde Discord before',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+        .addField(': You have been joined Discord Before',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
 
-         .setFooter(`${h.tag}`,"")
+         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
 
      modlog2.send({embed:heroo});
 
@@ -49,6 +47,19 @@ member => {
 
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+    
     
     
     
@@ -129,7 +140,7 @@ client.on('guildMemberAdd', member => {
   
   
 
-});
+
   
        client.on('message', message => {
         var args = message.content.split(/[ ]+/)
@@ -272,9 +283,9 @@ client.on('message',function(message) {
 
 
 client.on('message', message => {
-    if (message.content.startsWith("دعواتي")) {
+    if (message.content.startsWith("invites")) {
     message.guild.fetchInvites()
-    .then(invites => message.channel.send(`لقد دعوت  **${invites.find(invite => invite.inviter.id === message.author.id).uses}** عضو لهاذا السيرفر`))
+    .then(invites => message.channel.send(`You have been invited  **${invites.find(invite => invite.inviter.id === message.author.id).uses} Members**  To this server`))
      
     }
 });
@@ -485,5 +496,4 @@ client.on("guildMemberAdd", (member) => {
 
 
 
-client.login(process.env.BOT_TOKEN);
-
+ client.login('NDM4OTU2Mzc3MTcyNDc1OTA1.DcMMcA.NlJ7jWfLdJrUE2ychISefZk7qYo');
