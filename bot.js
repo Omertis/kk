@@ -127,9 +127,7 @@ client.on('guildMemberAdd', member => {
 
 
   
-  client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag} !`);
-        client.user.setActivity("WELCOME my DEV Markﾠ#5181",{type: 'WATCHING'});
+  
 
 });
   
