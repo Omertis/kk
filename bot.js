@@ -13,7 +13,7 @@ member => {
 
  
 
-                    let modlog2 = client.channels.find('name', 'general');
+                    let modlog2 = client.channels.find('name', 'chat');
 
 
  
@@ -30,9 +30,9 @@ member => {
 
         .setAuthor(h.username,h.avatarURL)
 
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
+        .addField(': You joinde Discord before',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
 
-         .setFooter(`${h.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
+         .setFooter(`${h.tag}`,"")
 
      modlog2.send({embed:heroo});
 
@@ -356,7 +356,7 @@ client.channels.get("4257162256d63041537").sendFile(canvas.toBuffer())
 
  client.on('guildMemberAdd', member => {
 
-     if (member.guild.id === "438797856690798602") {
+     if (member.guild.id === "438937491592970244") {
     
 if (member.user.bot) return;
 var Canvas = require('canvas')
@@ -390,20 +390,20 @@ const w = ['./img/bull1.png'];
                         if (err) return console.log(err);
                         ctx.font = '35px agent_orange';
                         ctx.fontSize = '40px';
-                        ctx.fillStyle = "#7FF5DA";
+                        ctx.fillStyle = "#34495E";
                         ctx.textAlign = "center";
                         ctx.fillText(" Welcome to " + member.guild.name , 300, 55);
 
                         //ur name
                         ctx.font = '40px Impact';
                         ctx.fontSize = '48px';
-                        ctx.fillStyle = "#7FF586";
+                        ctx.fillStyle = "#2C3E50";
                         ctx.textAlign = "center";
                         ctx.fillText(member.user.username, 300, 110);
 
                          ctx.font = '30px Impact';
                         ctx.fontSize = '20px';
-                        ctx.fillStyle = "#7FCDF5";
+                        ctx.fillStyle = "#2C3E50";
                         ctx.textAlign = "center";
                         ctx.fillText("Member Number" + member.guild.memberCount, 300, 150);
 
@@ -417,7 +417,7 @@ const w = ['./img/bull1.png'];
                                  ctx.closePath();
                                  ctx.clip();
                                  ctx.drawImage(ava, 10, 38, 128, 126);     
-client.channels.get("438797856690798604").sendFile(canvas.toBuffer())
+client.channels.get("438944866139897856").sendFile(canvas.toBuffer())
 
 
 
@@ -438,7 +438,7 @@ function forEachObject(obj, func) {
 client.on("ready", () => {
     var guild;
     while (!guild)
-        guild = client.guilds.find("name", "test")
+        guild = client.guilds.find("name", "Bull")
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
@@ -447,7 +447,7 @@ client.on("ready", () => {
     })
 })
 client.on("guildMemberAdd", (member) => {
-    let channel = member.guild.channels.find('name', 'general');
+    let channel = member.guild.channels.find('name', 'chat');
     if (!channel) {
         console.log("!channel fails");
         return;
@@ -458,7 +458,7 @@ client.on("guildMemberAdd", (member) => {
     console.log('made it till here!');
     var guild;
     while (!guild)
-        guild = client.guilds.find("name", "test")
+        guild = client.guilds.find("name", "Bull")
     guild.fetchInvites().then((data) => {
         data.forEach((Invite, key, map) => {
             var Inv = Invite.code;
